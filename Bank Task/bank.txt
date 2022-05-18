@@ -1,0 +1,7 @@
+home => log of customers
+add customer => name, acc number, balance
+
+each customer has two actions 
+
+one action for 'Add Transactions' => type[add,withdraw] , value
+one action for 'Show' => show single data

@@ -1,0 +1,24 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-4">
+    <h3 class="text-center text-primary">Customer Data</h3>
+    {{#unless customer}}
+    <div class="alert alert-danger">
+        No User Data Found
+    </div>
+    {{else}}
+    <table class="table table-stripped">
+        <thead class="alert alert-primary p-3">
+            <tr>
+                <th>ID: {{customer.id}}</th>
+                <th>Name: {{customer.name}}</th>
+            </tr>
+            <tr>
+                <td>Account Number: {{customer.accNum}}</td>
+                <td>Balance: {{customer.balance}}$</td>
+            </tr>
+        </thead>
+    </table>
+    {{/unless}}
+</section>
+{{>footer}}
