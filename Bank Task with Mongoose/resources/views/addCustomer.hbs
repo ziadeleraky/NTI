@@ -1,0 +1,23 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-4">
+    <h3 class="text-center text-primary my-3">Add New Customer</h3>
+    <form method="get" action="/addLogic">
+        <div class="mb-3">
+            <legend>Name: </legend>
+            <input name="name" class="form-control" placeholder="Name">
+        </div>
+        <div class="mb-3">
+            <legend>Acount Number: </legend>
+            <input name="accNum" class="form-control" placeholder="Account Number" type="number">
+        </div>
+        <div class="mb-3">
+            <legend>Balance: </legend>
+            <input name="balance" class="form-control" placeholder="Balance" type="number">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Add Customer</button>
+        </div>
+    </form>
+</section>
+{{>footer}}

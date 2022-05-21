@@ -1,0 +1,37 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-4">
+    <h3 class="text-center text-primary">All Customers</h3>
+    <table class="table table-stripped">
+        <thead>
+          {{#each headers}}
+            <th>{{this}}</th>
+          {{/each}}
+        </thead>
+        <tbody>
+            {{#if hasData}}
+                {{#each data}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.accNum}}</td>
+                    <td>{{this.balance}}$</td>
+                    <td>Type: {{this.transactions.type}}<br>Value: {{this.transactions.value}}$</td>
+                    <td>
+                        <a href="/customers/addTransaction/{{this.id}}" class="btn btn-success">Add Transaction</a>
+                        <a href="/customers/{{this.id}}" class="btn btn-primary mx-2">Show Data</a>
+                        <a href="/customers/del/{{this.id}}" class="btn btn-danger mx-3">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            {{else}}
+                <tr class="alert alert-danger">
+                    <td colspan="6">
+                        No Users Yet
+                    </td>
+                </tr>
+            {{/if}}
+        </tbody>
+    </table>
+</section>
+{{>footer}}

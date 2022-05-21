@@ -1,0 +1,45 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-4">
+    <h3 class="text-center text-primary my-3">Add Transaction</h3>
+    <form method="POST">
+        <div class="mb-3">
+            <legend>ID: </legend>
+            <input name="id" class="form-control" placeholder="ID" value="{{customer._id}}" disabled>
+        </div>
+        <div class="mb-3">
+            <legend>Name: </legend>
+            <input name="name" class="form-control" placeholder="Name" value="{{customer.name}}" disabled>
+        </div>
+        <div class="mb-3">
+          <legend>Acount Number: </legend>
+            <input name="accNum" class="form-control" placeholder="Account Number" type="number" value="{{customer.accNum}}" disabled>
+        </div>
+        <div class="mb-3">
+          <legend>Balance: </legend>
+            <input name="balance" class="form-control" placeholder="Balance" type="number" value="{{customer.balance}}" readonly>
+        </div>
+        <div class="mb-3">
+          <fieldset class="form-control">
+            <legend>Transaction</legend>
+            <div class="mb-3">
+              <label for="type">Transaction Type: </label>
+              <select class="form-control" name="transactions[type]" id="type" required>
+                <option value="" selected disabled>Select Type</option>
+                {{#each type}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="accValue">Transaction Value: </label>
+              <input id="accValue" name="transactions[value]" class="form-control" placeholder="$$" type="number" required>
+            </div>
+          </fieldset>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Add Transaction</button>
+        </div>
+    </form>
+</section>
+{{>footer}}
